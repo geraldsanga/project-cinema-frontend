@@ -4,7 +4,7 @@
       class="navbar navbar-expand-lg navbar-light"
       style="background-color: #d4af37;"
     >
-      <router-link :to="{ name: 'Home' }" class="navbar-brand">Project Cinema</router-link>
+      <router-link :to="{ name: 'Home' }" class="navbar-brand nav_text">Project Cinema</router-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -31,20 +31,20 @@
         </form>
         <ul class="navbar-nav ml-auto mr-5">
           <li class="nav-item">
-            <a class="nav-link" href="#"
+            <a class="nav-link nav_text" 
               >Categories</a
             >
           </li>
           <li class="nav-item">
-            <router-link :to="{ name: 'TheaterList' }" class="nav-link">Theaters</router-link>
+            <router-link :to="{ name: 'TheaterList' }" class="nav-link nav_text">Theaters</router-link>
           </li>
           <li class="nav-item">
             
           <div class="dropdown show">
-          <a class="nav-link dropdown-toggle nounderline" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle nounderline" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Account
           </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <div class="dropdown-menu">
               <router-link :to="{ name: 'UserAccount' }" class="dropdown-item">Account</router-link>
               <router-link :to="{ name: 'Login' }" class="dropdown-item">Logout</router-link>
             </div>
@@ -64,6 +64,10 @@ export default {
 </script>
 <style>
 ul {
+  font-weight: bold;
+}
+.nav_text{
+  color: black;
   font-weight: bold;
 }
 .header_color{

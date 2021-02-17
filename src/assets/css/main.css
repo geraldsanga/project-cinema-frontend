@@ -12,6 +12,13 @@ body {
 .nounderline {
   text-decoration: none !important;
   color: white;
+  cursor: pointer;
+}
+
+.top_row_text{
+  font-weight: bold;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
 }
 
 .footer {

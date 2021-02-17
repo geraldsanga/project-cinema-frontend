@@ -1,7 +1,7 @@
 <template>
-<transition name='view' appear enter-active-class="animate__animated animate__fadeInRight animate__dealy__faster" leave-active-class="animate__animated">
   <div>
     <BaseHeader/>
+<transition name='view' appear enter-active-class="animate__animated animate__fadeIn animate__faster" leave-active-class="animate__animated">
   <div class="container mt-5">
     <div class="row">
       <div class="mx-3 top_row_text">
@@ -27,8 +27,8 @@
 
     </div>
   </div>
-  </div>
 </transition>
+  </div>
 </template>
 <script>
 import BaseHeader from '@/components/BaseHeader.vue'

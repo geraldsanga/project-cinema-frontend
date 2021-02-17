@@ -32,19 +32,19 @@
           <hr>
 
           <!-- Post Content -->
-          <p class="lead">
+          <p class="lead text_color">
             {{ description}}
           </p>
           <hr>
           <!-- Theaters Showing the movie -->
-            <div class="card my-4">
+            <!-- <div class="card my-4">
                 <h5 class="card-header">Aura Mall</h5>
                 <div class="card-body">
                    <h5 class="card-title">04:50</h5>
                    <p class="card-text">Fire - Upanga</p>
                    <a href="#" class="btn btn-primary">Book a Ticket</a>
                 </div>
-            </div>
+            </div> -->
           <!-- End of theaters showing the movie -->
         </div>
       </div>

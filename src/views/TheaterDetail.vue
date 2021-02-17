@@ -4,14 +4,14 @@
     <BaseHeader/>
    <div class="container">
 
-      <div class="row">
+      <div class="row justify-content-between">
 
-        <!-- Post Content Column -->
-        <div class="col-lg-8">
+       <!-- Theater details -->
+        <div class="col-lg-5">
 
           <!-- Title -->
-          <h1 class="mt-4 text_color">{{ name }}</h1>
-          
+          <h1 class="my-3 text_color">{{ name }}</h1>
+          <p class="text_color"> Contact number: {{ contact_number }}</p>
           <hr>
 
           <!-- Date/Time -->
@@ -20,10 +20,53 @@
           <hr>
 
           <!-- Preview Image -->
-          <img class="img-fluid rounded" v-bind:src="'http://localhost:8000' + image" alt="movie-imageeeee">
+          <img class="img-fluid rounded" v-bind:src="'http://localhost:8000' + image" alt="theater-image">
 
           <hr>
-          <!-- Theaters Showing the movie -->
+      
+        </div>
+
+        <div class="col-lg-6 my-3">
+          <h1 class="text_color">Movies showing today:</h1>
+          <div class="col justify-content-between text_color">
+            <div class="row">
+              <a class="nounderline" href="">
+                <div class="alert alert-dark" role="alert"> 
+                  Avengers Endgame
+                </div>
+              </a> 
+            </div>
+            <div class="row">
+              <a class="nounderline" href="">
+                <div class="alert alert-dark" role="alert"> 
+                  Fast and Furious 9
+                </div>
+              </a> 
+            </div>
+            <div class="row">
+              <a class="nounderline" href="">
+                <div class="alert alert-dark" role="alert"> 
+                  Spider Man 3
+                </div>
+              </a> 
+            </div>
+            <div class="row">
+              <a class="nounderline" href="">
+                <div class="alert alert-dark" role="alert"> 
+                  The Imitation Game
+                </div>
+              </a> 
+            </div>
+            <div class="row">
+              <a class="nounderline" href="">
+                <div class="alert alert-dark" role="alert"> 
+                  Go Go Gerry
+                </div>
+              </a> 
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12">
             <div class="card my-4">
                 <h5 class="card-header">{{ name }}(Direction)</h5>
                 <div class="card-body">
@@ -31,7 +74,7 @@
                       :center="{lat:coordinates[1], lng:coordinates[0]}"
                       :zoom="15"
                       map-type-id="terrain"
-                      style="width: 700px; height: 300px"
+                      style="width: 1070px; height: 300px"
                       >
                       <!-- Marker for the Theater -->
                       <GmapMarker
@@ -50,7 +93,6 @@
                   </GmapMap>
                 </div>
             </div>
-          <!-- End of theaters showing the movie -->
         </div>
       </div>
       <!-- /.row -->
