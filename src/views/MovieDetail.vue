@@ -1,7 +1,8 @@
 <template>
-<transition name='view' appear enter-active-class="animate__animated animate__fadeIn animate__dealy__slower" leave-active-class="animate__animated animate__fadeOut">
+<transition name='view' appear enter-active-class="animate__animated animate__fadeIn animate__dealy__slower" leave-active-class="animate__animated animate__fadeIn">
   <div>
     <BaseHeader/>
+    <p>{{Screenings}}</p>
    <div class="container">
 
       <div class="row">
@@ -10,18 +11,18 @@
         <div class="col-lg-8">
 
           <!-- Title -->
-          <h1 class="mt-4">{{ title }}</h1>
+          <h1 class="mt-4 text_color">{{ title }}</h1>
 
           <!-- Author -->
-          <p class="lead">
-            by
-            <a href="#">The Russo Brothers</a>
+          <p class="lead text_color">
+             Directed by
+            <a href="#">{{ director }}</a>
           </p>
 
           <hr>
 
           <!-- Date/Time -->
-          <p>Premiered on January 1, 2019 at 12:00 PM</p>
+          <p class="text_color">Premiered on {{ premier_date }}</p>
 
           <hr>
 
@@ -34,13 +35,6 @@
           <p class="lead">
             {{ description}}
           </p>
-          <blockquote class="blockquote">
-            <p class="mb-0">This universe is finite, its resources, finite… if life is left unchecked, life will cease to exist.</p>
-            <footer class="blockquote-footer">Thanos
-              <cite title="Source Title">Planet Amara</cite>
-            </footer>
-          </blockquote>
-
           <hr>
           <!-- Theaters Showing the movie -->
             <div class="card my-4">
@@ -62,21 +56,44 @@
 </template>
 <script>
 import BaseHeader from '@/components/BaseHeader.vue'
+import axios from 'axios'
 export default {
   components: {
     BaseHeader,
   },
   data(){
     return {
+      id: 0,
       title: '',
       description: '',
-      image: ''
+      image: '',
+      director: '',
+      premier_date: '',
     }
   },
-  mounted(){
+  computed: {
+    screenings(){
+      return this.getters.getCurrentMovieScreenings
+    }
+  },
+  methods: {
+    async fetchScreenings (){
+      let screenings = await axios.get(`core/get_movie_screenings/${this.id}`)
+      return screenings
+    }
+  },
+  created(){
+    this.id = this.$route.params.id
     this.title = this.$route.params.title
+    this.premier_date = this.$route.params.premier_date
+    this.director = this.$route.params.director
     this.description = this.$route.params.description
     this.image = this.$route.params.image
-    }
+    },
 }
 </script>
+<style>
+  .text_color{
+    color: white;
+  }
+</style>

@@ -1,8 +1,8 @@
 <template>
-  <div class="mt-2 mx-5 border rounded sticky-top">
+  <div class="mt-2 mx-5 border rounded sticky-top header_color">
     <nav
       class="navbar navbar-expand-lg navbar-light"
-      style="background-color: #35a79c;"
+      style="background-color: #d4af37;"
     >
       <router-link :to="{ name: 'Home' }" class="navbar-brand">Project Cinema</router-link>
       <button
@@ -25,14 +25,14 @@
             placeholder="Movie or Theater"
             aria-label="Search"
           />
-          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit" style="color: #ffffff">
             Search
           </button>
         </form>
         <ul class="navbar-nav ml-auto mr-5">
           <li class="nav-item">
             <a class="nav-link" href="#"
-              >Movies</a
+              >Categories</a
             >
           </li>
           <li class="nav-item">
@@ -65,5 +65,8 @@ export default {
 <style>
 ul {
   font-weight: bold;
+}
+.header_color{
+  background-color: black;
 }
 </style>

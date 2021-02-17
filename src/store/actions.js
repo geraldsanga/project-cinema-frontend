@@ -6,7 +6,6 @@ export default {
   },
   async fetchOpeningThisWeekMovies({commit}){
     let opening_this_week_movies = await axios.get('core/opening_this_week_movies/')
-    console.log('Fetching')
     commit('SET_OPENING_THIS_WEEK_MOVIES', opening_this_week_movies.data)
   },
   async fetchAllTheaters({commit}){

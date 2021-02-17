@@ -16,12 +16,15 @@ import "animate.css"
 
 import axios from "axios";
 
+import VueGeolocation from 'vue-browser-geolocation'
+
 import * as VueGoogleMaps from "vue2-google-maps";
 
 axios.defaults.baseURL = 'http://localhost:8000/'
 
 Vue.config.productionTip = false;
 
+Vue.use(VueGeolocation)
 Vue.use(VueGoogleMaps, {
   load: {
     key: "AIzaSyCEz5uaJY4kaS_2yI2Vbb_1xFm5ztU0Wow",

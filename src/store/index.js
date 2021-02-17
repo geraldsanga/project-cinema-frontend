@@ -12,7 +12,7 @@ export default new Vuex.Store({
     now_playing_movies: null,
     opening_this_week_movies: null,
     theaters: null,
-    logged_in_user: null,
+    user: null,
   },
   mutations,
   actions,

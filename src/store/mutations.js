@@ -3,9 +3,7 @@ export default {
     state.now_playing_movies = payload
   },
   SET_OPENING_THIS_WEEK_MOVIES(state, payload){
-    console.log('Mutating')
     state.opening_this_week_movies = payload
-    console.log(state.opening_this_week_movies)
   },
   SET_THEATERS(state, payload){
     state.theaters = payload

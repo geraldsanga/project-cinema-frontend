@@ -1,5 +1,5 @@
 <template>
-<transition name='view' appear enter-active-class="animate__animated animate__fadeIn animate__dealy__slower" leave-active-class="animate__animated animate__fadeOut">
+<transition name='view' appear enter-active-class="animate__animated animate__fadeInRight animate__dealy__faster" leave-active-class="animate__animated">
   <div>
     <BaseHeader/>
   <div class="container mt-5">
@@ -18,7 +18,7 @@
             <p class="card-text">{{theater.contact_number}}</p>
           </div>
           <div class="card-footer">
-            <button class="btn btn-primary" @click="$router.push({name: 'TheaterDetail',
+            <button class="btn btn-secondary" @click="$router.push({name: 'TheaterDetail',
              params: { name: theater.name, contact_number: theater.contact_number,
               coordinates: theater.location.coordinates, image: theater.image}})">More Details</button>
           </div>

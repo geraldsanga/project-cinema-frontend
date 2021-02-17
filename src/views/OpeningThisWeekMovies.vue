@@ -1,139 +1,24 @@
 <template>
-<transition name='view' appear enter-active-class="animate__animated animate__fadeIn animate__dealy__slower" leave-active-class="animate__animated animate__fadeOut">
+<transition name='view' appear enter-active-class="animate__animated animate__fadeIn animate__dealy__slower" leave-active-class="animate__animated">
   <div>
     <BaseHeader/>
   <div class="container mt-5">
     <div class="container row">
-        <h1>Movies Opening This Week</h1>
+        <h1 style="color: white">Movies Opening This Week:</h1>
     </div>
     <div class="row text-center">
 
-      <div class="col-lg-3 col-md-6 mb-4">
+      <div class="col-lg-3 col-md-6 mb-4" v-for="(movie, index) in OpeningThisWeekMovies" :key="index">
         <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+          <img class="card-img-top" v-bind:src="'http://localhost:8000' + movie.image" alt="movie-image">
           <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+            <h4 class="card-title">{{ movie.title }}</h4>
+            <p class="card-text">{{ movie.description }}</p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
+             <button class="btn btn-secondary" @click="$router.push({name: 'MovieDetail',
+             params: { title: movie.title, description: movie.description,
+              image: movie.image, director: movie.director, premier_date: movie.premier_date}})">More Details</button>
           </div>
         </div>
       </div>
@@ -147,9 +32,14 @@ import BaseHeader from '@/components/BaseHeader.vue'
 export default {
   components: {
     BaseHeader
+  },
+   computed: {
+    OpeningThisWeekMovies() {
+      return this.$store.getters.getOpeningThisWeekMovies
+    }
   }
 }
 </script>
-<style lang="">
+<style>
   
 </style>
