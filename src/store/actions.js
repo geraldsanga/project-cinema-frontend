@@ -13,6 +13,10 @@ export default {
     let all_theaters = await axios.get('core/theaters/', {headers: {'Authorization': `Token ${state.user_token}`}})
     commit('SET_THEATERS', all_theaters.data)
   },
+  async fetchAllCategories({state, commit}){
+    let all_categories = await axios.get('core/categories', {headers: {'Authorization': `Token ${state.user_token}`}})
+    commit('SET_CATEGORIES', all_categories.data)
+  },
   async fetchUserInfo({state, commit}){
     let user_info = await axios.get('/auth/user/', {headers: {'Authorization': `Token ${state.user_token}`}})
     commit('SET_USER_INFO', user_info.data)

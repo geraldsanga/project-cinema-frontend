@@ -30,12 +30,15 @@
           </button>
         </form>
         <ul class="navbar-nav ml-auto mr-5">
-          <li class="nav-item">
-            <a class="nav-link nav_text" 
-              >Categories</a
-            >
-          </li>
-          <li class="nav-item">
+          <div class="dropdown show">
+          <a class="nav-link dropdown-toggle nounderline" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Categories
+          </a>
+          <div class="dropdown-menu">
+              <router-link v-for="(category, index) in categories" :key="index" :to="{ path: `/movie_in_category/${category.id}` }" class="dropdown-item">{{category.name}}</router-link>
+          </div>
+          </div>
+          <li class="nav-item show">
             <router-link :to="{ name: 'TheaterList' }" class="nav-link nav_text">Theaters</router-link>
           </li>
           <li class="nav-item">
@@ -47,7 +50,7 @@
           <div class="dropdown-menu">
               <router-link :to="{ name: 'UserAccount' }" class="dropdown-item">Account</router-link>
               <button @click="logout" class="dropdown-item">Logout</button>
-            </div>
+          </div>
           </div>
           </li>
         </ul>
@@ -57,12 +60,14 @@
 </template>
 <script>
 export default {
-  mounted() {
-    
-  },
   methods: {
     logout() {
       this.$store.dispatch('logout')
+    }
+  },
+  computed: {
+    categories() {
+      return this.$store.getters.getAllCategories
     }
   }
 };

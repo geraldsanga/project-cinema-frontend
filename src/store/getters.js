@@ -13,6 +13,8 @@ export default {
 
   getAllTheaters: state => state.theaters,
 
+  getAllCategories: state => state.categories,
+
   getNowPlayingMovies: state => state.now_playing_movies,
 
   getOpeningThisWeekMovies: state => state.opening_this_week_movies,

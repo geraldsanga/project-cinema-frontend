@@ -6,6 +6,9 @@ export default {
   SET_OPENING_THIS_WEEK_MOVIES(state, payload){
     state.opening_this_week_movies = payload
   },
+  SET_CATEGORIES(state, payload){
+    state.categories = payload
+  },
   SET_THEATERS(state, payload){
     state.theaters = payload
   },

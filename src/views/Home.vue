@@ -119,6 +119,8 @@ export default {
       this.$store.dispatch('fetchOpeningThisWeekMovies')
     }
       this.$store.dispatch('fetchUserInfo')
+      this.$store.dispatch('fetchAllCategories')
+      console.log(this.$store.getters.getAllCategories)
   },
 };
 </script>

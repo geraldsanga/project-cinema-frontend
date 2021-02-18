@@ -7,6 +7,7 @@ import Signup from '../views/Signup.vue'
 import TheaterList from '../views/TheaterList.vue'
 import UserAccount from '../views/UserAccount.vue'
 import MovieDetail from '../views/MovieDetail.vue'
+import CategoryMovies from '../views/CategoryMovies.vue'
 import TheaterDetail from '../views/TheaterDetail.vue'
 import NowPlayingMovies from '../views/NowPlayingMovies.vue'
 import OpeningThisWeekMovies from '../views/OpeningThisWeekMovies.vue'
@@ -55,6 +56,13 @@ const routes = [
     path: '/theater_detail',
     name: 'TheaterDetail',
     component: TheaterDetail,
+    meta: {requiresAuth: true},
+  },
+  {
+    path: '/movie_in_category/:id',
+    name: 'MoviesInCategory',
+    component: CategoryMovies,
+    props: true,
     meta: {requiresAuth: true},
   },
   {
