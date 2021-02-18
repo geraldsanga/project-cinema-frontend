@@ -8,7 +8,7 @@
     </div>
     <div class="row text-center">
       <div class="col-lg-3 col-md-6 mb-4" v-for="(movie, index) in all_movies" :key="index">
-        <div class="card h-100" v-if="movie.category == id">
+        <div class="card h-100">
           <img class="card-img-top" v-bind:src="'http://localhost:8000' + movie.image" alt="movie-image">
           <div class="card-body">
             <h4 class="card-title">{{movie.title}}</h4>
@@ -41,7 +41,9 @@ export default {
       return this.$store.getters.getOpeningThisWeekMovies
     },
     all_movies(){
-      return [...this.NowPlayingMovies, ...this.OpeningThisWeekMovies]
+      let movies = [...this.NowPlayingMovies, ...this.OpeningThisWeekMovies]
+      let category_movies = movies.filter(movie => movie.category == this.id)
+      return category_movies
     }
   },
 }
