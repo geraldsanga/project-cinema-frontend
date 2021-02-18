@@ -11,7 +11,6 @@ export default {
   },
   SET_USER(state, payload){
     state.user_token = payload
-    console.log(state.user_token)
   },
   SET_USER_INFO(state, payload){
     state.user_info = payload

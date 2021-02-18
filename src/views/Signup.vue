@@ -59,7 +59,7 @@ export default {
             this.error += 'Also, make sure that the two passwords match and they contain atleast eight characters'
             this.show_error = true
           }else if(error.response.data.username){
-            this.error = `The username ${this.username} is already taken. Please try another one`
+            this.error = error.response.data.username[0]
             this.show_error = true
             this.password1 = ''
             this.password2 = ''
