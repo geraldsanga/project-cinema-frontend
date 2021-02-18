@@ -15,7 +15,7 @@
       </div>
       <div class="col-12 text-center">
         <h5 class="text_color">Dont have an account yet? <router-link :to="{ name: 'Signup' }" class="nounderline">Signup</router-link></h5>
-        <transition name='view' enter-active-class="animate__animated animate__fadeIn animate__faster">
+        <transition name='view' enter-active-class="animate__animated animate__bounceIn animate__faster">
             <div class="alert alert-danger" role="alert" v-if="show_error"> 
               {{error}} 
             </div>
