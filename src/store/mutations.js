@@ -1,3 +1,4 @@
+import router from '../router'
 export default {
   SET_NOW_PLAYING_MOVIES(state, payload){
     state.now_playing_movies = payload
@@ -8,11 +9,15 @@ export default {
   SET_THEATERS(state, payload){
     state.theaters = payload
   },
-  // Will come back to you later
-  SET_USER(state, username){
-    state.user = username
+  SET_USER(state, payload){
+    state.user_token = payload
+    console.log(state.user_token)
+  },
+  SET_USER_INFO(state, payload){
+    state.user_info = payload
   },
   LOG_OUT(state, payload){
-    state.user = payload
+    state.user_token = payload
+    router.push('/login')
   }
 }

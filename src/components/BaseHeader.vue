@@ -46,7 +46,7 @@
           </a>
           <div class="dropdown-menu">
               <router-link :to="{ name: 'UserAccount' }" class="dropdown-item">Account</router-link>
-              <router-link :to="{ name: 'Login' }" class="dropdown-item">Logout</router-link>
+              <button @click="logout" class="dropdown-item">Logout</button>
             </div>
           </div>
           </li>
@@ -59,6 +59,11 @@
 export default {
   mounted() {
     
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch('logout')
+    }
   }
 };
 </script>

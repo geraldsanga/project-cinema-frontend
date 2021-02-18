@@ -118,6 +118,7 @@ export default {
       this.$store.dispatch('fetchNowPlayingMovies')
       this.$store.dispatch('fetchOpeningThisWeekMovies')
     }
+      this.$store.dispatch('fetchUserInfo')
   },
 };
 </script>

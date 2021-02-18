@@ -17,6 +17,10 @@ export default {
 
   getOpeningThisWeekMovies: state => state.opening_this_week_movies,
 
-  isAuthenticated: state => !!state.user
+  isAuthenticated: state => !!state.user_token,
+
+  getUserToken: state => state.user_token,
+  
+  getUserInformation: state => state.user_info,
   
 }
