@@ -34,9 +34,11 @@
           <a class="nav-link dropdown-toggle nounderline" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Categories
           </a>
+          <transition name='view' appear enter-active-class="animate__animated animate__fadeIn animate__slower" leave-active-class="animate__animated">
           <div class="dropdown-menu">
               <router-link v-for="(category, index) in categories" :key="index" :to="{ path: `/movie_in_category/${category.id}` }" class="dropdown-item">{{category.name}}</router-link>
           </div>
+          </transition>
           </div>
           <li class="nav-item show">
             <router-link :to="{ name: 'TheaterList' }" class="nav-link nav_text">Theaters</router-link>
