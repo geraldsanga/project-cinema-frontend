@@ -1,6 +1,6 @@
 # FRONTEND APP FOR project_cinema
 This repo holds code for the frontend application of the project _project_cinema_. 
-Together with the [backend application]() written in python's Django this application makes 
+Together with the [backend application](https://github.com/gerry3105/project_cinema_backend) written in python's Django this application makes 
 the full project_cinema. Routes include
 * _/_ which is the landing page
 * _login/_ for user authentication
@@ -15,4 +15,4 @@ the full project_cinema. Routes include
 * compile and hot reload for development with 
 ```npm run serve```
   
-Now you can go to [localhost:8080]() and enjoy
+Now you can go to [localhost:8080](localhost:8000) and enjoy
