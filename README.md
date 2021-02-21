@@ -15,4 +15,4 @@ the full project_cinema. Routes include
 * compile and hot reload for development with 
 ```npm run serve```
   
-Now you can go to [localhost:8080](https://127.0.0.1) and enjoy
+Now you can go to [localhost:8080](https://127.0.0.1:8080) and enjoy
