@@ -93,8 +93,6 @@
     <div v-else class="mx-auto text-center" style="color: #ff0f0f">
       <h2>No movies will premier this week :(</h2>
     </div>
-    
-    <!-- /.row -->
   </div>
 </transition>
   </div>
@@ -120,7 +118,6 @@ export default {
     }
       this.$store.dispatch('fetchUserInfo')
       this.$store.dispatch('fetchAllCategories')
-      console.log(this.$store.getters.getAllCategories)
   },
 };
 </script>
