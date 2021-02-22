@@ -1,4 +1,6 @@
 import axios from 'axios';
+
+// Several actions to interact with the API
 export default {
   async fetchNowPlayingMovies({state, commit}){
     let now_playing_movies = await axios.get('core/now_playing_movies/',

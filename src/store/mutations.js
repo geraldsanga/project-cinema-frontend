@@ -1,4 +1,6 @@
 import router from '../router'
+
+// mutations to alter the state of the app as per the actions
 export default {
   SET_NOW_PLAYING_MOVIES(state, payload){
     state.now_playing_movies = payload

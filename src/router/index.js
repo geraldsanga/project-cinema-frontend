@@ -1,6 +1,9 @@
+// Import required vue modules
+import store from '../store'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import store from '../store'
+
+// Views importation
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
@@ -14,6 +17,7 @@ import OpeningThisWeekMovies from '../views/OpeningThisWeekMovies.vue'
 
 Vue.use(VueRouter)
 
+// Router list with auth required
 const routes = [
   {
     path: '/',
@@ -85,6 +89,7 @@ const router = new VueRouter({
   routes
 })
 
+// Navigation guard to check if the next view requires authentication, redirect to login
 router.beforeEach((to, from, next) => {
   if(to.matched.some(record => record.meta.requiresAuth)) {
     if (store.getters.isAuthenticated) {
@@ -97,6 +102,7 @@ router.beforeEach((to, from, next) => {
   }
 })
 
+// if the next page requires no auth and the user is authenticated (Login and SignUp views), redirect to home
 router.beforeEach((to, from, next) => {
   if (to.matched.some((record) => record.meta.guest)) {
     if (store.getters.isAuthenticated) {
