@@ -48,7 +48,7 @@ export default{
         this.$router.push('/')
       }catch(error){
         if(error.message == "Network Error"){
-          this.error = "Our services are currently offline. We are really sorry for the INKOVINIENSI :("
+          this.error = "Our services are currently offline. We are really sorry for the incoviniences :("
           this.show_error = true
         }else{
           this.error = error.response.data.non_field_errors[0]

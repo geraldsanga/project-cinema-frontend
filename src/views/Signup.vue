@@ -54,7 +54,7 @@ export default {
         this.$router.push('/')
       }catch(error){
         if(error.message == "Network Error"){
-          this.error = "Our services are currently offline. We are really sorry for the INKOVINIENSI :("
+          this.error = "Our services are currently offline. We are really sorry for the inconveniences"
           this.show_error = true
         }else{
           if(error.response.data.username && error.response.data.password1){
@@ -82,7 +82,6 @@ export default {
             this.password1 = ''
             this.password2 = ''
           }
-          console.log(error.response.data)
         }
       }
     },
