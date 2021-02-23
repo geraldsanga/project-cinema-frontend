@@ -39,14 +39,8 @@ export default {
     BaseHeader
   }, 
   computed: {
-    NowPlayingMovies() {
-      return this.$store.getters.getNowPlayingMovies
-    },
-    OpeningThisWeekMovies(){
-      return this.$store.getters.getOpeningThisWeekMovies
-    },
     all_movies(){
-      let movies = [...this.NowPlayingMovies, ...this.OpeningThisWeekMovies]
+      let movies = this.$store.getters.getAllMovies
       let category_movies = movies.filter(movie => movie.category == this.id)
       return category_movies
     }
