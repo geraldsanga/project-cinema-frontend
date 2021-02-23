@@ -1,10 +1,8 @@
 export default {
-  getNowPlayingMovieById: state => id => {
-    return state.now_playing_movies.find(movie => movie.id === id)
-  },
-
-  getOpeningThisWeekMovieById: state => id => {
-    return state.opening_this_week_movies.find(movie => movie.id === id)
+  getMovieById: state => id => {
+    let all_movies = [...state.now_playing_movies, ...state.opening_this_week_movies]
+    let movie = all_movies.find(movie => movie.id == id)
+    return movie
   },
   getTheaterById: state => id => {
     return state.theaters.find(theater => theater.id === id)

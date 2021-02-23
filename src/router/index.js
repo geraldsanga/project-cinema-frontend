@@ -39,9 +39,10 @@ const routes = [
     meta: { guest: true}
   },
   {
-    path: '/movie_detail',
+    path: '/movie_detail/:id',
     name: 'MovieDetail',
     component: MovieDetail,
+    props: true,
     meta: {requiresAuth: true},
   },
   {
