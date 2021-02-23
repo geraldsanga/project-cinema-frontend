@@ -16,7 +16,9 @@
                 <p class="card-text">{{movie.description.slice(0, 100)}}......</p>
               </div>
               <div class="card-footer">
-                <button class="btn btn-secondary" @click="$router.push({path: `movie_detail/${movie.id}`})">More Details</button>
+                <button class="btn btn-secondary" @click="$router.push({name: 'MovieDetail',
+                params: { id: movie.id, title: movie.title, description: movie.description,
+                  image: movie.image, director: movie.director, premier_date: movie.premier_date}})">More Details</button>
                 </div>
               </div>
             </div>
