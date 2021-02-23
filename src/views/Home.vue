@@ -53,11 +53,7 @@
               <p class="card-text">{{movie.description.slice(0, 100)}}....</p>
             </div>
             <div class="card-footer">
-              <button class="btn btn-secondary" @click="$router.push({name: 'MovieDetail',
-              params: { id: movie.id, title: movie.title, description: 
-              movie.description, image: movie.image,
-              director: movie.director, premier_date: movie.premier_date
-              }})">More Details</button>
+              <button class="btn btn-secondary" @click="$router.push({path: `movie_detail/${movie.id}`})">More Details</button>
             </div>
           </div>
         </div>
@@ -65,7 +61,7 @@
     </div>
     <!-- end of Now playing row -->
 
-    <!-- Opening this wekk row -->
+    <!-- Opening this week row -->
     <div class="row my-3">
       <div class="mx-3 top_row_text">OPENING THIS WEEK</div>
       <div class="ml-auto mx-3 top_row_text"><router-link :to="{ name: 'OpeningThisWeekMovies' }" class="nounderline">SEE ALL</router-link></div>
@@ -80,11 +76,7 @@
               <p class="card-text">{{movie.description.slice(0, 100)}}.....</p>
             </div>
             <div class="card-footer">
-              <button class="btn btn-secondary" @click="$router.push({name: 'MovieDetail',
-              params: { title: movie.title, description: 
-              movie.description, image: movie.image,
-              director: movie.director, premier_date: movie.premier_date
-             }})">More Details</button>
+              <button class="btn btn-secondary" @click="$router.push( {path: `movie_detail/${movie.id}`})">More Details</button>
             </div>
           </div>
         </div>
