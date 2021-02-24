@@ -7,7 +7,7 @@ import store from "./store";
 // Other imports
 import "./assets/css/main.css"
 import "./assets/js/main.js"
-
+import secrets from "./config.js"
 
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -27,7 +27,7 @@ Vue.config.productionTip = false;
 Vue.use(VueGeolocation)
 Vue.use(VueGoogleMaps, {
   load: {
-    key: "AIzaSyCEz5uaJY4kaS_2yI2Vbb_1xFm5ztU0Wow",
+    key: secrets.google_key,
   },
 });
 
