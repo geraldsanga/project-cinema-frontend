@@ -1,7 +1,7 @@
 <template>
-<transition name='view' appear enter-active-class="animate__animated animate__fadeIn animate__dealy__slower" leave-active-class="animate__animated">
   <div>
     <BaseHeader/>
+   <transition name='view' appear enter-active-class="animate__animated animate__fadeIn animate__dealy__slower" leave-active-class="animate__animated">
    <div class="container">
 
       <div class="row justify-content-between">
@@ -98,8 +98,8 @@
       <!-- /.row -->
 
     </div>
+    </transition>
   </div>
-</transition>
 </template>
 <script>
 import BaseHeader from '@/components/BaseHeader.vue'
