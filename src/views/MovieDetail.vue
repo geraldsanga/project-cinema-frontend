@@ -36,13 +36,19 @@
           </p>
           <hr>
           <!-- Theaters Showing the movie -->
-            <div class="card my-4" v-for="(screening, index) in screenings" :key="index">
+            <div v-if="screenings.length">
+              <div class="card my-4" v-for="(screening, index) in screenings" :key="index">
                 <h5 class="card-header">{{ screening.hall }} - {{ screening.theater }}</h5>
                 <div class="card-body">
                    <h5 class="card-title">Showing on: {{ screening.start_time }} hrs</h5>
                    <a href="#" class="btn btn-primary">Book a Ticket</a>
                 </div>
+              </div>
             </div>
+            <div v-else class="mx-auto text-center" style="color: #ff0f0f">
+              <h2 class="mt-5">There are currently no screenings for this movie</h2>
+            </div>
+            
           <!-- End of theaters showing the movie -->
         </div>
       </div>
