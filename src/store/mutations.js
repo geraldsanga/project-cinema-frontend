@@ -14,6 +14,9 @@ export default {
   SET_THEATERS(state, payload){
     state.theaters = payload
   },
+  SET_SCREENINGS(state, payload){
+    state.screenings = payload
+  },
   SET_USER(state, payload){
     state.user_token = payload
   },

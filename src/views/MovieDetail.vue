@@ -36,14 +36,13 @@
           </p>
           <hr>
           <!-- Theaters Showing the movie -->
-            <!-- <div class="card my-4">
-                <h5 class="card-header">Aura Mall</h5>
+            <div class="card my-4" v-for="(screening, index) in screenings" :key="index">
+                <h5 class="card-header">{{ screening.hall }} - {{ screening.theater }}</h5>
                 <div class="card-body">
-                   <h5 class="card-title">04:50</h5>
-                   <p class="card-text">Fire - Upanga</p>
+                   <h5 class="card-title">Showing on: {{ screening.start_time }} hrs</h5>
                    <a href="#" class="btn btn-primary">Book a Ticket</a>
                 </div>
-            </div> -->
+            </div>
           <!-- End of theaters showing the movie -->
         </div>
       </div>
@@ -63,8 +62,14 @@ export default {
   computed: {
     movie(){
       return this.$store.getters.getMovieById(this.id) 
+    },
+    screenings(){
+      return this.$store.getters.getScreenings
     }
   },
+  created(){
+    this.$store.dispatch('fetchScreenings', this.id)
+  }
 }
 </script>
 <style>

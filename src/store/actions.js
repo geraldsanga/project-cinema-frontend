@@ -23,6 +23,12 @@ export default {
     let user_info = await axios.get('/auth/user/', {headers: {'Authorization': `Token ${state.user_token}`}})
     commit('SET_USER_INFO', user_info.data)
   },
+  async fetchScreenings ({state, commit}, id){
+    let screenings = await axios.get(`core/movie_screenings/${id}`,
+    {headers: {'Authorization': `Token ${state.user_token}`}})
+    commit('SET_SCREENINGS', screenings.data)
+    console.log(screenings.data)
+  },
   async logout({commit}){
     let user_token = null
     commit('LOG_OUT', user_token)
