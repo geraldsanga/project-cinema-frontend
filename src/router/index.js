@@ -10,8 +10,9 @@ import Signup from '../views/Signup.vue'
 import TheaterList from '../views/TheaterList.vue'
 import UserAccount from '../views/UserAccount.vue'
 import MovieDetail from '../views/MovieDetail.vue'
-import CategoryMovies from '../views/CategoryMovies.vue'
 import TheaterDetail from '../views/TheaterDetail.vue'
+import CheckoutPage from '../views/CheckoutPage.vue'
+import CategoryMovies from '../views/CategoryMovies.vue'
 import NowPlayingMovies from '../views/NowPlayingMovies.vue'
 import OpeningThisWeekMovies from '../views/OpeningThisWeekMovies.vue'
 
@@ -69,6 +70,13 @@ const routes = [
     component: CategoryMovies,
     props: true,
     meta: {requiresAuth: true},
+  },
+  {
+    path: '/checkout_movie/:id/:name/:theater/:hall/:time',
+    name: 'CheckoutPage',
+    component: CheckoutPage,
+    props:true,
+    meta: {requiresAuth: true}
   },
   {
     path: '/theater_list',
