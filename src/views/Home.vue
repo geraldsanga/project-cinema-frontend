@@ -104,10 +104,8 @@ export default {
     }
   },
   created () {
-    if(this.NowPlayingMovies < 1){
       this.$store.dispatch('fetchNowPlayingMovies')
       this.$store.dispatch('fetchOpeningThisWeekMovies')
-    }
       this.$store.dispatch('fetchUserInfo')
       this.$store.dispatch('fetchAllCategories')
   },
