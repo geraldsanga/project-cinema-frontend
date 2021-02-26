@@ -131,9 +131,6 @@ export default {
       return this.$store.getters.getTheaterById(this.id)
     }
   },
-  mounted(){
-    console.log(this.id, this.theater.location.coordinates)
-    }
 }
 </script>
 <style scoped>
