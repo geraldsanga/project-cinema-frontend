@@ -18,9 +18,7 @@
             <p class="card-text">{{theater.contact_number}}</p>
           </div>
           <div class="card-footer">
-            <button class="btn btn-secondary" @click="$router.push({name: 'TheaterDetail',
-             params: { name: theater.name, contact_number: theater.contact_number,
-              coordinates: theater.location.coordinates, image: theater.image}})">More Details</button>
+            <button class="btn btn-secondary" @click="$router.push({path: `/theater_detail/${theater.id}`})">More Details</button>
           </div>
         </div>
       </div>
