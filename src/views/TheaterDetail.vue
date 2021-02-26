@@ -10,8 +10,8 @@
         <div class="col-lg-5">
 
           <!-- Title -->
-          <h1 class="my-3 text_color">{{ name }}</h1>
-          <p class="text_color"> Contact number: {{ contact_number }}</p>
+          <h1 class="my-3 text_color">{{ theater.name }}</h1>
+          <p class="text_color"> Contact number: {{ theater.contact_number }}</p>
           <hr>
 
           <!-- Date/Time -->
@@ -20,7 +20,7 @@
           <hr>
 
           <!-- Preview Image -->
-          <img class="img-fluid rounded" v-bind:src="'http://localhost:8000' + image" alt="theater-image">
+          <img class="img-fluid rounded" v-bind:src="'http://localhost:8000' + theater.image" alt="theater-image">
 
           <hr>
       
@@ -68,10 +68,10 @@
         </div>
         <div class="col-lg-12">
             <div class="card my-4">
-                <h5 class="card-header">{{ name }}(Direction)</h5>
+                <h5 class="card-header">{{ theater.name }}(Direction)</h5>
                 <div class="card-body">
                    <GmapMap
-                      :center="{lat:coordinates[1], lng:coordinates[0]}"
+                      :center="{lat:theater.location.coordinates[1], lng:theater.location.coordinates[0]}"
                       :zoom="15"
                       map-type-id="terrain"
                       style="width: 1070px; height: 300px"
@@ -79,7 +79,7 @@
                       <!-- Marker for the Theater -->
                       <GmapMarker
                         :key="index"
-                        :position="{lat:coordinates[1], lng:coordinates[0]}"
+                        :position="{lat:theater.location.coordinates[1], lng:theater.location.coordinates[0]}"
                         :clickable="true"
                       />
                       <!-- Marker to where the user is -->
@@ -107,12 +107,13 @@ export default {
   components: {
     BaseHeader,
   },
+  props: ['id'],
   data(){
     return {
-      name: '',
-      image: '',
-      coordinates: [],
-      contact_number: '',
+      // name: '',
+      // image: '',
+      // coordinates: [],
+      // contact_number: '',
       user_coordinates: {
         lat: 0,
         lng: 0,
@@ -125,11 +126,13 @@ export default {
           this.user_coordinates = coordinates;
         })
   },
+  computed: {
+    theater (){
+      return this.$store.getters.getTheaterById(this.id)
+    }
+  },
   mounted(){
-    this.name = this.$route.params.name
-    this.image = this.$route.params.image
-    this.contact_number = this.$route.params.contact_number
-    this.coordinates = this.$route.params.coordinates
+    console.log(this.id, this.theater.location.coordinates)
     }
 }
 </script>

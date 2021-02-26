@@ -44,32 +44,33 @@ const routes = [
     name: 'MovieDetail',
     component: MovieDetail,
     props: true,
-    meta: {requiresAuth: true},
+    meta: {requiresAuth: true}
   },
   {
     path: '/now_playing_movies',
     name: 'NowPlayingMovies',
     component: NowPlayingMovies,
-    meta: {requiresAuth: true},
+    meta: {requiresAuth: true}
   },
   {
     path: '/opening_whis_week_movies',
     name: 'OpeningThisWeekMovies',
     component: OpeningThisWeekMovies,
-    meta: {requiresAuth: true},
+    meta: {requiresAuth: true}
   },
   {
-    path: '/theater_detail',
+    path: '/theater_detail/:id',
     name: 'TheaterDetail',
     component: TheaterDetail,
-    meta: {requiresAuth: true},
+    props: true,
+    meta: {requiresAuth: true}
   },
   {
     path: '/movie_in_category/:id',
     name: 'MoviesInCategory',
     component: CategoryMovies,
     props: true,
-    meta: {requiresAuth: true},
+    meta: {requiresAuth: true}
   },
   {
     path: '/checkout_movie/:id/:name/:theater/:hall/:time',
@@ -82,13 +83,13 @@ const routes = [
     path: '/theater_list',
     name: 'TheaterList',
     component: TheaterList,
-    meta: {requiresAuth: true},
+    meta: {requiresAuth: true}
   },
   {
     path: '/user_account',
     name: 'UserAccount',
     component: UserAccount,
-    meta: {requiresAuth: true},
+    meta: {requiresAuth: true}
   }
 ]
 
