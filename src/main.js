@@ -5,6 +5,9 @@ import router from "./router";
 import store from "./store";
 
 // Other imports
+import VueKonva from "vue-konva"
+
+
 import "./assets/css/main.css"
 import "./assets/js/main.js"
 import secrets from "./config.js"
@@ -25,6 +28,7 @@ axios.defaults.baseURL = 'http://localhost:8000/'
 Vue.config.productionTip = false;
 
 Vue.use(VueGeolocation)
+Vue.use(VueKonva)
 Vue.use(VueGoogleMaps, {
   load: {
     key: secrets.google_key,
