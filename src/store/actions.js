@@ -27,7 +27,6 @@ export default {
     let screenings = await axios.get(`core/movie_screenings/${id}`,
     {headers: {'Authorization': `Token ${state.user_token}`}})
     commit('SET_SCREENINGS', screenings.data)
-    console.log(screenings.data)
   },
   async logout({commit}){
     let user_token = null
