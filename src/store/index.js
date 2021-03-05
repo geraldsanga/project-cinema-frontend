@@ -14,6 +14,7 @@ export default new Vuex.Store({
     opening_this_week_movies: null,
     theaters: null,
     screenings: null,
+    seats: null,
     user_token: null,
     user_info: null,
   },

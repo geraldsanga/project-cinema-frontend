@@ -17,6 +17,9 @@ export default {
   SET_SCREENINGS(state, payload){
     state.screenings = payload
   },
+  SET_SEATS(state, payload){
+    state.seats = payload
+  },
   SET_USER(state, payload){
     state.user_token = payload
   },

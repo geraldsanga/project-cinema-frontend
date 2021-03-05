@@ -25,7 +25,7 @@
                   <div class="card-body">
                     <h5 class="card-title">Showing on: {{ screening.start_time }} hrs</h5>
                     <button class="btn btn-secondary" @click="$router.push( 
-                      {path: `/checkout_movie/${screening.movie}/${screening.movie_name}/${screening.theater}/${screening.hall}/${screening.start_time}`})">Book a Ticket</button>
+                      {path: `/checkout_movie/${screening.id}/${screening.movie}/${screening.theater}/${screening.hall}/${screening.start_time}`})">Book a Ticket</button>
                   </div>
                 </div>
               </div>

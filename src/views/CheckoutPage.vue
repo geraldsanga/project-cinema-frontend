@@ -3,14 +3,9 @@
    <BaseHeader/>
    <transition name='view' appear enter-active-class="animate__animated animate__fadeIn animate__dealy__slower" leave-active-class="animate__animated">
      <div class="container mt-4" style="background-color: #d4af37;">
-       <div class="row">
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="card mt-3">
-            <!-- <img class="card-img-top" v-bind:src="'http://localhost:8000' + movie.image" alt="movie-image"> -->
-            <img class="mt" src="http://localhost:8000/media/movie_images/the_theory_of_everything.jpg" alt="Movie Image">
-          </div>
-        </div>
-        <div class="col-lg-7 col-md-6 mt-3" style="color:black;">
+       <div class="row justify-content-center">
+         <div class="col-lg-7 col-md-6"><h1 style="color:black;">Booking for</h1></div>
+        <div class="col-lg-7 col-md-6" style="color:black;">
           <h3>Movie: {{name}}</h3>
           <h3>Theater: {{theater}}</h3>
           <h3>Hall: {{hall}}</h3>
@@ -20,7 +15,7 @@
      </div>
    </transition>
    <hr>
-     <div class="container" style="color:">
+     <div class="container rounded" style="color:">
        <div class="row justify-content-center">
          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
             Choose Seat
@@ -37,6 +32,9 @@
                   </button>
                 </div>
                 <div class="modal-body my-5 text-center">
+                  <div class="alert alert-success" role="alert">
+                    Seat booked
+                  </div>
                   <p><strong>SCREEN</strong></p>
                   <v-stage ref="stage" :config="stageSize">
                     <v-layer>
@@ -499,7 +497,6 @@
                         fill: 'black'
                       }" />
                       <v-rect
-                        @click="changeNodeColor"
                         :config="{
                         y: 175,
                         x:450,
@@ -519,43 +516,16 @@
                       }" />
                     </v-layer>
                   </v-stage>
-                  <form @submit.prevent="update_user_info">
+                  <form @submit.prevent="bookSeat">
                     <div class="form-group mt-3">
                       <label for="exampleFormControlSelect1"><b>Select Seat</b></label>
-                      <select class="form-control" id="exampleFormControlSelect1">
-                        <option>A1</option>
-                        <option>A2</option>
-                        <option>A3</option>
-                        <option>A4</option>
-                        <option>A5</option>
-                        <option>A6</option>
-                        <option>A7</option>
-                        <option>B1</option>
-                        <option>B2</option>
-                        <option>B3</option>
-                        <option>B4</option>
-                        <option>B5</option>
-                        <option>B6</option>
-                        <option>B7</option>
-                        <option>C1</option>
-                        <option>C2</option>
-                        <option>C3</option>
-                        <option>C4</option>
-                        <option>C5</option>
-                        <option>C6</option>
-                        <option>C7</option>
-                        <option>D1</option>
-                        <option>D2</option>
-                        <option>D3</option>
-                        <option>D4</option>
-                        <option>D5</option>
-                        <option>D6</option>
-                        <option>D7</option>
+                      <select class="form-control" id="exampleFormControlSelect1" v-model="seat">
+                        <option v-for="(seat, index) in freeSeats" :key="index">{{seat}}</option>
                       </select>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                      <button type="submit" class="btn btn-success">Check Availability</button>
+                      <button type="submit" class="btn btn-success">Book Seat</button>
                     </div>
                   </form>
                 </div>
@@ -575,17 +545,21 @@ export default {
   props: ['id', 'name', 'theater', 'hall', 'time'],
   data (){
     return {
+      seat: '',
       stageSize: {
         width: 600,
         height: 200,
       }
     }
   },
-  methods: {
-    changeNodeColor(event){
-      event.currentTarget.attrs.fill = "ffffff"
-    },
-  }
+  computed: {
+    freeSeats(){
+      return this.$store.getters.getFreeSeats
+    }
+  },
+  mounted(){
+    this.$store.dispatch('fetchFreeSeats', 7)
+    }
 }
 </script>
 <style>

@@ -28,6 +28,11 @@ export default {
     {headers: {'Authorization': `Token ${state.user_token}`}})
     commit('SET_SCREENINGS', screenings.data)
   },
+  async fetchFreeSeats({state, commit}, id){
+    let free_seats = await axios.get(`core/get_free_seats/${id}`, 
+    {headers: {'Authorization': `Token ${state.user_token}`}})
+    commit('SET_SEATS', free_seats.data)
+  },
   async logout({commit}){
     let user_token = null
     commit('LOG_OUT', user_token)

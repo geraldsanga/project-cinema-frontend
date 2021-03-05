@@ -15,6 +15,8 @@ export default {
 
   getScreenings: state => state.screenings,
 
+  getFreeSeats: state => state.seats,
+  
   getAllCategories: state => state.categories,
 
   getNowPlayingMovies: state => state.now_playing_movies,
