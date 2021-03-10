@@ -33,6 +33,11 @@ export default {
     {headers: {'Authorization': `Token ${state.user_token}`}})
     commit('SET_SEATS', free_seats.data)
   },
+  async bookSeat({state, commit},seat_info){
+    let remaining_seats = await axios.post(`core/book_a_ticket/${seat_info.screening}/${seat_info.seat}/`,
+    {headers: {'Authorization': `Token ${state.user_token}`}})
+    commit('SET_SEATS', remaining_seats.data)
+  },
   async logout({commit}){
     let user_token = null
     commit('LOG_OUT', user_token)
