@@ -552,13 +552,19 @@ export default {
       }
     }
   },
+  methods: {
+    bookSeat(){
+      let seat_info = {screening: this.id, seat: this.seat}
+      this.$store.dispatch('bookSeat', seat_info)
+    }
+  },
   computed: {
     freeSeats(){
       return this.$store.getters.getFreeSeats
     }
   },
   mounted(){
-    this.$store.dispatch('fetchFreeSeats', 7)
+    this.$store.dispatch('fetchFreeSeats', this.id)
     }
 }
 </script>
