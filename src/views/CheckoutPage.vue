@@ -32,8 +32,8 @@
                   </button>
                 </div>
                 <div class="modal-body my-5 text-center">
-                  <div class="alert alert-success" role="alert">
-                    Seat booked
+                  <div v-show="booked" class="alert alert-success" role="alert">
+                    Your seat has been booked
                   </div>
                   <p><strong>SCREEN</strong></p>
                   <v-stage ref="stage" :config="stageSize">
@@ -518,7 +518,7 @@
                   </v-stage>
                   <form @submit.prevent="bookSeat">
                     <div class="form-group mt-3">
-                      <label for="exampleFormControlSelect1"><b>Select Seat</b></label>
+                      <label for="exampleFormControlSelect1" style="color: green;"><b>Choose seat from Available Seats</b></label>
                       <select class="form-control" id="exampleFormControlSelect1" v-model="seat">
                         <option v-for="(seat, index) in freeSeats" :key="index">{{seat}}</option>
                       </select>
@@ -549,13 +549,17 @@ export default {
       stageSize: {
         width: 600,
         height: 200,
-      }
+      },
+      booked: false
     }
   },
   methods: {
     bookSeat(){
+      this.booked = false
       let seat_info = {screening: this.id, seat: this.seat}
       this.$store.dispatch('bookSeat', seat_info)
+      this.booked = true
+      this.seat = ""
     }
   },
   computed: {
