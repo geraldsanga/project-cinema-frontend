@@ -1,4 +1,4 @@
-# FRONTEND APP FOR project_cinema
+# frontend app for project_cinema
 This repo holds code for the frontend application of the project _project_cinema_. 
 Together with the [backend application](https://github.com/gerry3105/project_cinema_backend) written in python's Django this application makes 
 the full project_cinema. Routes include
