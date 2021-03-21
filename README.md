@@ -11,7 +11,7 @@ the full project_cinema. Routes include
 * _/now_playing_movies/_ to get all the movies that are currently showing
 
 ## The backend app
-Click this 👉 [link](https://github.com/geraldsanga/project-cinema-backend) to follow installation guides for the frontend application written in Vue.js
+Click this 👉 [link](https://github.com/geraldsanga/project-cinema-backend) to follow installation guides for the backend application written in Django
 
 ## Installation
 * get all dependencies 📦 with
