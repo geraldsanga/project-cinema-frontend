@@ -31,6 +31,7 @@
 <script>
 import BaseHeader from '@/components/BaseHeader.vue'
 export default {
+  name: "TheaterList",
   components: {
     BaseHeader
   }, 

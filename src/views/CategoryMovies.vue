@@ -32,6 +32,7 @@
 <script>
 import BaseHeader from '@/components/BaseHeader.vue'
 export default {
+  name: "CategoryMovies",
   props: ['id'],
   components: {
     BaseHeader

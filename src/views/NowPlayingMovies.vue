@@ -27,6 +27,7 @@
 <script>
 import BaseHeader from '@/components/BaseHeader.vue'
 export default {
+  name: "NowPlayingMovies",
   components: {
     BaseHeader
   }, 
