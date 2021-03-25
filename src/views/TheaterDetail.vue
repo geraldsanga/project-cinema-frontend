@@ -104,16 +104,13 @@
 <script>
 import BaseHeader from '@/components/BaseHeader.vue'
 export default {
+  name: "TheaterDetail",
   components: {
     BaseHeader,
   },
   props: ['id'],
   data(){
     return {
-      // name: '',
-      // image: '',
-      // coordinates: [],
-      // contact_number: '',
       user_coordinates: {
         lat: 0,
         lng: 0,

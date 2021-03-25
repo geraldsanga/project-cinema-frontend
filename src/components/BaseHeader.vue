@@ -62,6 +62,7 @@
 </template>
 <script>
 export default {
+  name: "BaseHeader",
   methods: {
     logout() {
       this.$store.dispatch('logout')

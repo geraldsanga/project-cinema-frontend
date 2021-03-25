@@ -33,6 +33,7 @@
 <script>
 import axios from 'axios'
 export default {
+  name: "SignUpPage",
   data() {
     return {
       email: '',

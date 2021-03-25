@@ -68,6 +68,7 @@
 import BaseHeader from '@/components/BaseHeader.vue'
 import axios from 'axios'
 export default {
+  name: "UserAccount",
   components: {
     BaseHeader,
   },

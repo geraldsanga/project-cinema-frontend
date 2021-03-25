@@ -9,6 +9,7 @@
 </template>
 <script>
 export default {
+  name: "BaseFooter",
   data(){
     return {
       currentyear: new Date().getFullYear(),
